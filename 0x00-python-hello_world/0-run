@@ -1,0 +1,3 @@
+#!/bin/bash
+python3 "$PYFILE"
+export PATH="C:\Users\abu al ameen\AppData\Local\Programs\Python\Python36:$PATH"
