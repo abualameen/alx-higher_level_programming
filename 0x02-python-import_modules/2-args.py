@@ -9,4 +9,4 @@ elif len_args > 1:
 else:
     print(f"{len_args} arguments.")
 for h in range(len_args):
-    print("{}: {}".format(h, args[h]))
+    print("{}: {}".format(h+1, args[h]))
