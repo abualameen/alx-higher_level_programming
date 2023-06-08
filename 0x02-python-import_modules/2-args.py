@@ -7,6 +7,6 @@ if len_args == 1:
 elif len_args == 0:
     print("0 arguments.")
 else:
-    print("{} arguments".format(len_args))
+    print("{} arguments:".format(len_args))
 for h in range(len_args):
     print("{}: {}".format(h+1, args[h]))
