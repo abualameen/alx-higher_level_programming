@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    topull = ()
+    topul = ()
     if sentence is None:
-        return topull
+        return topul
     topul = (len(sentence), sentence[0])
     return topul
