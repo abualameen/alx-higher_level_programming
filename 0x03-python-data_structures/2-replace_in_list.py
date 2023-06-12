@@ -4,7 +4,7 @@ def replace_in_list(my_list, idx, element):
         return my_list
     elif idx > len(my_list):
         return (my_list)
-    elif idx is None or element is None:
+    elif idx is None or "" and element is None or "":
         return (my_list)
     else:
         my_list[idx] = element
