@@ -9,4 +9,3 @@ def max_integer(my_list=[]):
         else:
             gtest = gtest
     return gtest
-
