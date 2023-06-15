@@ -2,10 +2,11 @@
 def weight_average(my_list=[]):
     if not my_list:
         return 0
-    score = list(map(lambda x: x[0], my_list))
-    weight = list(map(lambda x: x[1], my_list))
-    score_sum = sum(map(lambda x, y: x * y, score, weight))
-    weight_sum = sum(weight)
+    score_sum = 0
+    weight_sum = 0
+    for score, weight in my_list:
+        score_sum += score * weight
+        weight_sum += weight
     if weight_sum == 0:
         return 0
     return score_sum/weight_sum
