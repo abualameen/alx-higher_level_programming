@@ -9,7 +9,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 if j == x:
                     break
     except Exception as e:
-        print("IndexError: list index out of range",str(e))
+        print("IndexError: list index out of range:", str(e))
     print()
     return j
 
