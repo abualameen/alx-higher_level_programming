@@ -4,6 +4,8 @@
     this module defines a square class
 
 """
+
+
 class Square:
 
     """
@@ -13,11 +15,8 @@ class Square:
 
         """
         This function initializes the square instance.
-        
         Args:
-
             size (int): The size of the square (default is 0).
-       
         """
         self.size = size
 
@@ -38,12 +37,12 @@ class Square:
     def size(self, val):
 
         """
-        this function sets the size attribute to a value 
-        that as to be an integer, it raises various error based on the val provided
-
+        this function sets the size
+        attribute to a value
+        that as to be an integer, it raises various
+        error based on the val provided
         Args:
             val (int): The size of the square.
-        
         Raises:
             TypeError: If the val is not an integer.
             ValueError: If the val is less than 0.
