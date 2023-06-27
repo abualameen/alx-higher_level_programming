@@ -63,7 +63,9 @@ class Square:
 
         """
         return (self.__size * self.__size)
+
     def my_print(self):
+
         """
         Prints the square with the character '#' to the stdout.
         If size is  0. prints an empty line
