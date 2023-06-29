@@ -83,10 +83,24 @@ class Node:
 
 
 class SinglyLinkedList:
+    """
+    this class defines a singlylinkedlist
+
+    """
     def __init__(self):
+        """
+        this function initiates the head of a linkedlist
+
+        """
         self.head = None
 
     def sorted_insert(self, value):
+        """
+        this is a public defined method
+        Args:
+            value (int): this is the value stored
+
+        """
         new_node = Node(value)
         if self.head is None:
             self.head = new_node
@@ -95,13 +109,17 @@ class SinglyLinkedList:
             self.head = new_node
         else:
             current = self.head
-            while current.next_node is not None and
-            value >= current.next_node.data:
+            while current.next_node is not None and \
+                    value >= current.next_node.data:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
+        """
+        this is the function that prints to the stout
+
+        """
         if self.head is None:
             return ""
         current = self.head
