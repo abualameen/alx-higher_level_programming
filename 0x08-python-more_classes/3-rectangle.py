@@ -115,6 +115,11 @@ class Rectangle:
         """
         the function returns a human readable format
 
+        Returns:
+            A string representation of a rectangle using th # character
+            If the width or the height is equal 0,
+            function returns an empty string.
+
         """
         drw_rec = ""
         if self.__width == 0 or self.__height == 0:
