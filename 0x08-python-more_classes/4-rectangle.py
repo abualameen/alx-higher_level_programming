@@ -128,13 +128,13 @@ class Rectangle:
             drw_rec += "#" * self.__width + "\n"
         drw_rec += "#" * self.__width
         return(drw_rec)
-   
+
     def __repr__(self):
         """
-        this function return a string representation of 
-        the rectangle to be able to recreate a 
+        this function return a string representation of
+        the rectangle to be able to recreate a
         new instance by using eval()
-        
+
         Returns:
             A string that represents a rectangle in a formated way
 
