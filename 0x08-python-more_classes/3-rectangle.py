@@ -11,6 +11,10 @@ class Rectangle:
     """
         this class defines a rectangle, with a private
         instance attribute wid ahd height
+    
+        Attributes:
+            width (int): The width of the rectangle.
+            height (int): height of the rectangle.
     """
     def __init__(self, width=0, height=0):
 
