@@ -1,0 +1,37 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> yaqs_list = MyList()
+
+>>> yaqs_list.append(1)
+
+>>> yaqs_list.append(4)
+
+>>> yaqs_list.append(2)
+
+>>> yaqs_list.append(3)
+
+>>> yaqs_list.append(5)
+
+>>> print(yaqs_list)
+[1, 4, 2, 3, 5]
+
+>>> yaqs_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> print(yaqs_list)
+[1, 4, 2, 3, 5]
+
+>>> list_empty = MyList()
+
+>>> list_empty.print_sorted()
+[]
+
+>>> arranged = MyList([1, 2, 3, 4, 5])
+
+>>> arranged.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> non_int = MyList([1, "2", 3, "6", 5])
+
+>>> non_int.print_sorted()
+Error: non-integer elements in the List
