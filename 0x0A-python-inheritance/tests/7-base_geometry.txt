@@ -1,0 +1,18 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> shapes = BaseGeometry()
+
+>>> shapes.integer_validator("width", 10)
+
+>>> shapes.integer_validator("width", -5)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
+
+>>> shapes.integer_validator("width", 10)
+
+>>> shapes.integer_validator("breath", "new")
+Traceback (most recent call last):
+...
+TypeError: breath must be an integer
+
