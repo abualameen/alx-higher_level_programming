@@ -30,3 +30,8 @@ ValueError: radius must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
+
+>>> shapes.integer_validator("width","")
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
