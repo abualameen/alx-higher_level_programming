@@ -34,6 +34,8 @@ class BaseGeometry:
             ValueError: with the message "name must be greater than 0"
 
         """
+        if not isinstance(name, str) or not name:
+            raise ValueError("name must be a non-empty string")
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
