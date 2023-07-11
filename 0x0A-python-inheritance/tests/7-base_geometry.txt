@@ -2,6 +2,11 @@
 
 >>> shapes = BaseGeometry()
 
+>>> shapes.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
 >>> shapes.integer_validator("width", 10)
 
 >>> shapes.integer_validator("width", -5)
@@ -16,3 +21,12 @@ Traceback (most recent call last):
 ...
 TypeError: breath must be an integer
 
+>>> shapes.integer_validator("radius", 0)
+Traceback (most recent call last):
+...
+ValueError: radius must be greater than 0
+
+>>> shapes.integer_validator("width", 1.4)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
