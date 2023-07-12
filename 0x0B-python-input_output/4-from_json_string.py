@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import json
 """
 this module changes json format to python object
 
 """
+import json
 
 
 def from_json_string(my_str):
