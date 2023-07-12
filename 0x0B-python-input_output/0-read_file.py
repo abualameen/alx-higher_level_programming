@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+this module a python input and output module
+
+"""
 def read_file(filename=""):
     """
     This functio Reads a text file (UTF-8) and prints its contents to stdout.
