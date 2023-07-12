@@ -7,7 +7,7 @@ the Pascal’s triangle of n
 """
 
 
-def pascal_triangle(n): 
+def pascal_triangle(n):
     """
     this function creates pascal triangle
 
