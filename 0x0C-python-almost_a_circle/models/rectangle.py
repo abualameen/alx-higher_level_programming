@@ -22,10 +22,10 @@ class Rectangle(Base):
 
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -80,7 +80,7 @@ class Rectangle(Base):
             ValueError: If the val is less than 0
 
         """
-        if not isinstance(val, int):
+        if not isinstance(val, int) or not isinstance(val, (int, float)):
             raise TypeError("height must be an integer")
         elif val <= 0:
             raise ValueError("height must be > 0")
