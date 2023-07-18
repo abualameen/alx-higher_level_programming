@@ -5,6 +5,7 @@ this module creates a rectangle class
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     this is a rectangle class that inherites from the base class
@@ -35,7 +36,7 @@ class Rectangle(Base):
 
         """
         return self.__width
-    
+
     @width.setter
     def width(self, val):
         """
@@ -114,8 +115,8 @@ class Rectangle(Base):
         elif val < 0:
             raise ValueError("x must be >= 0")
         else:
-            self.__x= val
-        
+            self.__x = val
+
     @property
     def y(self):
         """
