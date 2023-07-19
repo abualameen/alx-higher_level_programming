@@ -202,7 +202,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-        This function returns a dictionary representatio 
+        This function returns a dictionary representation
         of the rectangle
         Returns:
             dict: A dictionary represatio of a rectangle
