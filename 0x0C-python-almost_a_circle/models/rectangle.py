@@ -159,10 +159,13 @@ class Rectangle(Base):
         displays the instance of the rectangle with #
 
         """
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+        for i in range(self.y):
             print()
+        for j in range(self.height):
+                x_cod  = ' ' * self.x
+                hassh = '#' * self.width
+                line = x_cod + hassh
+                print(line)
 
     def __str__(self):
         """
