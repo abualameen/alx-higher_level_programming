@@ -162,10 +162,10 @@ class Rectangle(Base):
         for i in range(self.y):
             print()
         for j in range(self.height):
-                x_cod  = ' ' * self.x
-                hassh = '#' * self.width
-                line = x_cod + hassh
-                print(line)
+            x_cod = ' ' * self.x
+            hassh = '#' * self.width
+            line = x_cod + hassh
+            print(line)
 
     def __str__(self):
         """
