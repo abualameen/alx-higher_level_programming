@@ -4,7 +4,7 @@ This module is the base class
 
 """
 import json
-
+import csv
 
 class Base:
     """
@@ -100,3 +100,61 @@ class Base:
         if kwargs:
             for key, val in kwargs.items():
                 setattr(self, key, val)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        this class method returns a list of instances from a JSON file
+
+        Returns:
+            list: A list of instances created from JSON file
+
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_string = file.read()
+                dictionaries = cls.from_json_string(json_string)
+                instances = [cls.create(**dictionary) for dictionary in dictionaries]
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        the class method to serialize instances to a CSV file.
+        Args:
+            list_objs (list): A list of instances
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", newline='') as file:
+            writer = csv.writer(file)
+            if cls.__name__ == "Rectangle":
+                fields = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                fields = ["id", "size", "x", "y"]
+            else:
+               fields = []
+            writer.writerow(fields)
+            for obj in list_objs:
+                writer.writerow([getattr(obj, field) for field in fields])
+    
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        the method to deserialize instances from a CSV file
+
+        """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, newline='') as file:
+                reader = csv.reader(file)
+                fields = next(reader, [])
+                instances = []
+                for row in reader:
+                    dictionary = {field: int(value) for field, value in zip(fields, row)}
+                    instances.append(cls.create(**dictionary))
+                return instances
+        except FileNotFoundError:
+            return []
