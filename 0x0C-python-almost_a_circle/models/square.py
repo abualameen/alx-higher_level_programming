@@ -33,8 +33,8 @@ class Square(Rectangle):
             value (int): new size value to set.
 
         """
-        self.width = value
-        self.height = value
+        self.width = val
+        self.height = val
 
     def __str__(self):
         """
