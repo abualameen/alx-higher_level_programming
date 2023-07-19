@@ -199,3 +199,20 @@ class Rectangle(Base):
                 self.y = args[4]
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        This function returns a dictionary representatio 
+        of the rectangle
+        Returns:
+            dict: A dictionary represatio of a rectangle
+                with it attributes
+
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
