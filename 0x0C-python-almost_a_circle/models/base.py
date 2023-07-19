@@ -70,3 +70,33 @@ class Base:
         if json_string is None or not json_string:
             "[]"
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        this class method create an instance with all
+        attributes already set
+        Args:
+            **dictionary (dict): dictionary with all attributes names
+        Returns:
+            Base: An instance with all attributes set
+            based on the values from the dic
+
+        """
+        if cls.__name__ == "Rectangle":
+            fake_inst = cls(1, 1)
+        elif cls.__name__ == "Square":
+            fake_inst = cls(1)
+        else:
+            raise ValueError("Invalid class name")
+        fake_inst.update(**dictionary)
+        return fake_inst
+
+    def update(self, *args, **kwargs):
+        """
+        this method updates the attributes
+
+        """
+        if kwargs:
+            for key, val in kwargs.items():
+                setattr(self, key, val)
