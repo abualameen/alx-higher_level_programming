@@ -23,6 +23,8 @@ class Base:
 
         """
         if id is not None:
+            if not isinstance(id, int) or id < 1:
+                raise ValueError("id must be a positive integer")
             self.id = id
         else:
             Base.__nb_objects += 1
