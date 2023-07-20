@@ -1,39 +1,58 @@
 #!/usr/bin/python3
+"""
+this module does unittest for base class
 
-
+"""
 import unittest
 
 from models.base import Base
 
+from models.rectangle import Rectangle
+
+from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class TestingBase(unittest.TestCase):
+    """
+    the class test the base class
 
-    def test_initialization(self):
+    """
 
-        base1 = Base()
+    def test_check_id(self):
+        """
+        this method conducts the unittest test case
+        for id correctness
 
-        base2 = Base()
+        """
+        r1 = Base()
+        r2 = Base()
+        r3 = Base()
+        self.assertEqual(r1.id, 1)
+        self.assertEqual(r2.id, 2)
+        self.assertEqual(r3.id, 3)
 
-        self.assertEqual(base1.id, 1)
+    def test_check_id_exits_already(self):
+        """
+        this method checks if an existing
+        id is assigned
 
-        self.assertEqual(base2.id, 2)
+        """
+        with self.assertRaises(ValueError) as context:
+            r4 = Base(1)
+        self.assertEqual(str(context.exception),
+                         "Specified id is already in use")
 
+    def tes_che_id_invalid(self):
+        """
+        this module checks for invalid id
 
-    def test_saving_id(self):
-
-        base = Base(100)
-
-        self.assertEqual(base.id, 100)
-
-
-    def test_to_json_string_valid(self):
-
-        pass
+        """
+        with self.assertRaises(ValueError) as context:
+            r5 = Base(-1)
+        self.assertEqual(str(context.exception),
+                         "Specied id is already in use")
 
 
 if __name__ == '__main__':
-
     unittest.main()
-
 
