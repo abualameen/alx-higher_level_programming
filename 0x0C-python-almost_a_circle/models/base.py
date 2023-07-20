@@ -39,6 +39,7 @@ class Base:
             str: JSON string representation of list_dictionaries
         """
         if list_dictionaries is None or not list_dictionaries:
+            raise TypeError("list_dic can be none")
             return "[]"
         return json.dumps(list_dictionaries)
 

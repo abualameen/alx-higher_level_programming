@@ -21,6 +21,9 @@ class TestingBase(unittest.TestCase):
     def test_check_id_afta_assigned_id(self):
         r5 = Base()
         self.assertEqual(r5.id, 4)
+
+    def test_base_tojson_string(self):
+        self.assertRaises(TypeError, Base.to_json_string, [])
     
 
 
