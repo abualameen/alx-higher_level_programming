@@ -6,6 +6,7 @@ This module is the base class
 import json
 import csv
 
+
 class Base:
     """
     This is the Base
