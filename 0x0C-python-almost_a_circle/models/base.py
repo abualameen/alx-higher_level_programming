@@ -25,6 +25,11 @@ class Base:
         if id is not None:
             if not isinstance(id, int) or id < 1:
                 raise ValueError("id must be a positive integer")
+            elif Base.__nb_objects >= id:
+                raise ValueError("Specified id is already in use")
+            elif ob in range(1, Base.__nb_objects + 1):
+                if ob == id:
+                    raise ValueError("Specified is already in use")
             self.id = id
         else:
             Base.__nb_objects += 1
