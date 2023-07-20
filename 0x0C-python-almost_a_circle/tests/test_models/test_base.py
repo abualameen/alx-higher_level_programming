@@ -13,6 +13,11 @@ class TestingBase(unittest.TestCase):
         self.assertEqual(r2.id, 2)
         self.assertEqual(r3.id, 3)
 
+    def test_check_assigned_id(self):
+        r4 = Base(100)
+        self.assertEqual(r4.id, 100)
+    
+
 
 if __name__ == '__main__':
     unittest.main()
