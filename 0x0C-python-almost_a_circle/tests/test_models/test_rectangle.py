@@ -1,3 +1,4 @@
+__init__.py
 import unittest
 
 from models.base import Base
