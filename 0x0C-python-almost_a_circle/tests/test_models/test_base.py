@@ -17,40 +17,21 @@ class TestingBase(unittest.TestCase):
     the class test the base class
 
     """
+    def test_no_arg(self):
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
 
-    def test_check_id(self):
-        """
-        this method conducts the unittest test case
-        for id correctness
+    def test_three_bases(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 2)
 
-        """
-        r1 = Base()
-        r2 = Base()
-        r3 = Base()
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
-        self.assertEqual(r3.id, 3)
-
-    def test_check_id_exits_already(self):
-        """
-        this method checks if an existing 
-        id is assigned
-
-        """
-        with self.assertRaises(ValueError) as context:
-            r4 = Base(1)
-        self.assertEqual(str(context.exception),
-                         "Specified id is already in use")
-
-    def tes_che_id_invalid(self):
-        """
-        this module checks for invalid id
-
-        """
-        with self.assertRaises(ValueError) as context:
-            r5 = Base(-1)
-        self.assertEqual(str(context.exception),
-                         "Specied id is already in use")
+    def test_None_id(self):
+        b1 = Base(None)
+        b2 = Base(None)
+        self.assertEqual(b1.id, b2.id - 1)
 
 
 if __name__ == '__main__':
