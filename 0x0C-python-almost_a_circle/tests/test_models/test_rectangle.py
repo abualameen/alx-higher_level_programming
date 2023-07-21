@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 import unittest
+
 from models.base import Base
 from io import StringIO
 from models.rectangle import Rectangle
@@ -20,6 +20,12 @@ class TestingRectangle(unittest.TestCase):
     def test_rec_id_2(self):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+
+    def test_rec_values(self):
+        self.assertRaises(TypeError, Rectangle, 10, "3")
+
+    def test_rec_values_1(self):
+        self.assertRaises(ValueError, Rectangle, -10, 3)
 
     def test_rec_values_2(self):
         self.assertRaises(TypeError, Rectangle, 10, 3, {})
