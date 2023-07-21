@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import unittest
 
+import unittest
 from models.base import Base
 from io import StringIO
 from models.rectangle import Rectangle
