@@ -88,6 +88,14 @@ class TestingRectangle(unittest.TestCase):
         expected = "[Rectangle] (12) 2/1 - 4/6"
         self.assertEqual(r_1.__str__(), expected)
 
+    def test_rec_display_4(self):
+        r_d2 = Rectangle(3, 2, 1, 0)
+        with patch('sys.stdout', new=StringIO()) as out:
+            r_d2.display()
+            result_exp = " ###\n ###\n"
+            printed_output = out.getvalue()
+            self.assertEqual(result_exp, printed_output)
+
 
 if __name__ == '__main__':
     unittest.main()
