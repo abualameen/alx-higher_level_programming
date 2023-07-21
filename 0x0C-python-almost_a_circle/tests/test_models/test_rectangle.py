@@ -10,12 +10,11 @@ from unittest.mock import patch
 class TestingRectangle(unittest.TestCase):
 
     def test_rec_id(self):
-        output = Rectangle(1, 2)
-        self.assertIsNotNone(output)
-
-    def test_rec_id_1(self):
-        output = Rectangle(1, 2, 3)
-        self.assertIsNotNone(output)
+        width = 1
+        height = 2
+        r1 = Rectangle(width, height)
+        self.assertEqual(r1.width, width)
+        self.assertEqual(r1.height, height)
 
 
 if __name__ == '__main__':
