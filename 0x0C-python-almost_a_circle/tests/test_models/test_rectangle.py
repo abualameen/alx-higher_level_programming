@@ -21,9 +21,9 @@ class TestingRectangle(unittest.TestCase):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
 
-    def test_rec_values(self):
-        rr = Rectangle(1, 2, 3, 4)
-        self.assertIsNotNone(rr)
+    #ef test_rec_values(self):
+       #rr = Rectangle(1, 2, 3, 4)
+        #self.assertIsNotNone(rr)
 
     def test_rec_values(self):
         self.assertRaises(TypeError, Rectangle, 10, "3")
