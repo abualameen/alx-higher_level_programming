@@ -110,6 +110,36 @@ class TestingRectangle(unittest.TestCase):
         expecting = {'x': 1, 'y': 9, 'id': r1.id, 'height': 2, 'width': 10}
         self.assertEqual(output, expecting)
 
+    def test_rec_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        expecting = "[Rectangle] (89) 10/10 - 10/10"
+        self.assertEqual(expecting, str(r1))
+
+    def test_rec_update_1(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2)
+        expecting = "[Rectangle] (89) 10/10 - 2/10"
+        self.assertEqual(expecting, str(r1))
+
+    def test_rec_update_2(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3)
+        expecting = "[Rectangle] (89) 10/10 - 2/3"
+        self.assertEqual(expecting, str(r1))
+
+    def test_rec_update_3(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4)
+        expecting = "[Rectangle] (89) 4/10 - 2/3"
+        self.assertEqual(expecting, str(r1))
+
+    def test_rec_update_4(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5)
+        expecting = "[Rectangle] (89) 4/5 - 2/3"
+        self.assertEqual(expecting, str(r1))
+
 
 if __name__ == '__main__':
     unittest.main()
