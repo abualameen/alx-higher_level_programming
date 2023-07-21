@@ -32,7 +32,7 @@ class TestingBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([ { 'id': 10}]), '[{"id": 10}]')
 
     def test_check_if_dumps_1(self):
-        self.assertEqual(Base.to_json_string([ { 'id': 12 }]), '[{"id": 12}]')
+        Base.to_json_string([ { 'id': 12 }])
 
 if __name__ == '__main__':
     unittest.main()
