@@ -104,6 +104,12 @@ class TestingRectangle(unittest.TestCase):
             printed_output = out.getvalue()
             self.assertEqual(result_exp, printed_output)
 
+    def test_rec_to_dic(self):
+        r1 = Rectangle(10, 2, 1, 9)
+        output = r1.to_dictionary()
+        expecting = {'x': 1, 'y': 9, 'id': 7, 'height': 2, 'width': 10}
+        self.assertEqual(output, expecting)
+
 
 if __name__ == '__main__':
     unittest.main()
