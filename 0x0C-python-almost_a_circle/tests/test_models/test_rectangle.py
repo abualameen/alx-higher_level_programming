@@ -48,6 +48,18 @@ class TestingRectangle(unittest.TestCase):
     def test_rec_values_3(self):
         self.assertRaises(TypeError, Rectangle, 10, 3, 4, "5")
 
+    def test_rec_all_argu(self):
+        width = 1
+        height = 2
+        x = 3
+        y = 4
+        id = 5
+        r4 = Rectangle(width, height, x, y, id)
+        self.assertEqual(r4.width, width) 
+        self.assertEqual(r4.height, height)
+        self.assertEqual(r4.x, x)
+        self.assertEqual(r4.y, y)
+        self.assertEqual(r4.id, id)
 
 if __name__ == '__main__':
     unittest.main()
