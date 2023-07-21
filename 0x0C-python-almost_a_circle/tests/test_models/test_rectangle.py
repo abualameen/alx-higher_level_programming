@@ -90,11 +90,11 @@ class TestingRectangle(unittest.TestCase):
 
     def test_rec_display(self):
         r_d1 = Rectangle(4, 6)
+        result_exp = "####\n####\n####\n####\n####\n####\n"
         with patch('sys.stdout', new=StringIO()) as mock_stdout:
             r_d1.display()
-            result_exp = "####\n####\n####\n####\n####\n####\n"
-            printed_output = mock_stdout.getvalue()
-            self.assertEqual(result_exp, printed_output)
+        printed_output = mock_stdout.getvalue()
+        self.assertEqual(result_exp, printed_output)
 
     def test_rec_display_4(self):
         r_d2 = Rectangle(3, 2, 1, 0)
