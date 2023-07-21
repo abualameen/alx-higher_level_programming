@@ -3,6 +3,7 @@
 import unittest
 from models.base import Base
 from io import StringIO
+import os
 from models.rectangle import Rectangle
 from unittest.mock import patch
 
@@ -152,6 +153,19 @@ class TestingRectangle(unittest.TestCase):
     def test_rec_create(self):
         r1 = Rectangle.create(**{'id': 99})
         self.assertEqual(r1.id, 99)
+
+    def test_save_to_file_none(self):
+        file_name = "Rectangle.json"
+        if os.path.exists(file_name):
+            os.remove(file_name)
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists(file_name))
+
+        with open(file_name, 'r') as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
+        os.remove(file_name)
+
 
 if __name__ == '__main__':
     unittest.main()
