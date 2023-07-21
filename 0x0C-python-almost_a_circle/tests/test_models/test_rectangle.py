@@ -39,6 +39,9 @@ class TestingRectangle(unittest.TestCase):
     def test_rec_values(self):
         self.assertRaises(TypeError, Rectangle, "10", 3)
 
+    def test_rec_values_1(self):
+        self.assertRaises(TypeError, Rectangle, 10, "3")
+
 
 if __name__ == '__main__':
     unittest.main()
