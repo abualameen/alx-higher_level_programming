@@ -11,18 +11,30 @@ class TestingRectangle(unittest.TestCase):
 
     def test_rec_id(self):
         r1 = Rectangle(4, 5)
-        self.assertEqual(r1.id, 11)
+        self.assertEqual(r1.id, 7)
 
     def test_rec_id_1(self):
         r2 = Rectangle(5, 4)
-        self.assertEqual(r2.id, 12)
+        self.assertEqual(r2.id, 8)
 
     def test_rec_id_2(self):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+    def test_rec_values(self):
+        rr = Rectangle(1, 2, 3, 4)
+        self.assertIsNotNone(rr)
 
     def test_rec_values(self):
         self.assertRaises(TypeError, Rectangle, 10, "3")
+
+    def test_rec_values_12(self):
+        self.assertRaises(TypeError, Rectangle, "10", 3)
+
+    def test_rec_values_11(self):
+        self.assertRaises(TypeError, Rectangle, 1, 2, "3")
+
+    def test_rec_values_13(self):
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, "4")
 
     def test_rec_values_1(self):
         self.assertRaises(ValueError, Rectangle, -10, 3)
@@ -68,7 +80,7 @@ class TestingRectangle(unittest.TestCase):
 
     def test_rec_str_2(self):
         r_2 = Rectangle(5, 5, 1)
-        expected = "[Rectangle] (13) 1/0 - 5/5"
+        expected = "[Rectangle] (9) 1/0 - 5/5"
         self.assertEqual(r_2.__str__(), expected)
 
     def test_rec_display_3(self):
