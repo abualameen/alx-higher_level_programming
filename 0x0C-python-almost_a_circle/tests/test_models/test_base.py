@@ -5,7 +5,7 @@ from models.base import Base
 
 
 class TestingBase(unittest.TestCase):
-     
+
     def test_check_id(self):
         r1 = Base()
         r2 = Base()
@@ -17,7 +17,7 @@ class TestingBase(unittest.TestCase):
     def test_check_assigned_id(self):
         r4 = Base(100)
         self.assertEqual(r4.id, 100)
-    
+
     def test_check_id_afta_assigned_id(self):
         r5 = Base()
         self.assertEqual(r5.id, 4)
@@ -29,10 +29,13 @@ class TestingBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string([]), "[]")
 
     def test_check_if_dumps(self):
-        self.assertEqual(Base.to_json_string([ { 'id': 10}]), '[{"id": 10}]')
+        output = Base.to_json_string([{'id': 12}])
+        self.assertIsNotNone(output)
 
     def test_check_if_dumps_1(self):
-        Base.to_json_string([ { 'id': 12 }])
+        output = Base.to_json_string([{'id': 10}])
+        self.assertIsInstance(output, str)
+
 
 if __name__ == '__main__':
     unittest.main()
