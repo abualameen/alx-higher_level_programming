@@ -61,5 +61,9 @@ class TestingRectangle(unittest.TestCase):
         self.assertEqual(r4.y, y)
         self.assertEqual(r4.id, id)
 
+    def test_rec_value_4(self):
+        self.assertRaises(ValueError, Rectangle, -1, 2)
+
+
 if __name__ == '__main__':
     unittest.main()
