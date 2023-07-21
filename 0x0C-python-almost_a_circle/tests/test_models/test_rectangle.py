@@ -20,6 +20,7 @@ class TestingRectangle(unittest.TestCase):
     def test_rec_id_2(self):
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
+
     def test_rec_values(self):
         rr = Rectangle(1, 2, 3, 4)
         self.assertIsNotNone(rr)
