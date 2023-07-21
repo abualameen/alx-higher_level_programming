@@ -25,7 +25,7 @@ class TestingBase(unittest.TestCase):
     def test_enmpty_list_dic(self):
         self.assertEqual(Base.to_json_string(None), "[]")
 
-    def test_enmpty_list_dic(self):
+    def test_enmpty_list_dic1(self):
         self.assertEqual(Base.to_json_string([]), "[]")
 
     def test_check_if_dumps(self):
@@ -35,6 +35,20 @@ class TestingBase(unittest.TestCase):
     def test_check_if_dumps_1(self):
         output = Base.to_json_string([{'id': 10}])
         self.assertIsInstance(output, str)
+
+    def test_check_if_base_from_json_string(self):
+        self.assertEqual(Base.from_json_string(None), "[]")
+
+    def test_check_if_base_from_json_string1(self):
+         self.assertEqual(Base.from_json_string([]), "[]")
+
+    def test_check_if_base_from_json_string2(self):
+        output = Base.from_json_string('[{ "id": 89 }]')
+        self.assertIsNotNone(output)
+
+    def test_check_if_base_from_json_string3(self):
+        output = Base.from_json_string('[{ "id": 89 }]')
+        self.assertIsInstance(output, list)
 
 
 if __name__ == '__main__':
