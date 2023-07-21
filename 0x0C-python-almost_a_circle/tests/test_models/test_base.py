@@ -21,6 +21,9 @@ class TestingBase(unittest.TestCase):
     def test_check_id_afta_assigned_id(self):
         r5 = Base()
         self.assertEqual(r5.id, 4)
+
+    def test_enmpty_list_dic(self):
+        self.assertEqual(Base.to_json_string(None), "[]")
     
 
 if __name__ == '__main__':
