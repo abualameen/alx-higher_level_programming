@@ -140,6 +140,14 @@ class TestingRectangle(unittest.TestCase):
         expecting = "[Rectangle] (89) 4/5 - 2/3"
         self.assertEqual(expecting, str(r1))
 
+    def test_rec_update_5(self):
+        r2 = Rectangle(10, 10, 10, 10, 14)
+        r2.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEqual(r2.id, 89)
+        self.assertEqual(r2.width, 1)
+        self.assertEqual(r2.height, 2)
+        self.assertEqual(r2.x, 3)
+        self.assertEqual(r2.y, 4)
 
 if __name__ == '__main__':
     unittest.main()
