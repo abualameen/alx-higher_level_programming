@@ -16,6 +16,26 @@ class TestingRectangle(unittest.TestCase):
         self.assertEqual(r1.width, width)
         self.assertEqual(r1.height, height)
 
+    def test_rec_id_1(self):
+        width = 1
+        height = 2
+        x = 3
+        r2 = Rectangle(width, height, x)
+        self.assertEqual(r2.width, width)
+        self.assertEqual(r2.height, height)
+        self.assertEqual(r2.x, x)
+
+    def test_rec_id_2(self):
+        width = 1
+        height = 2
+        x = 3
+        y = 4
+        r3 = Rectangle(width, height, x, y)
+        self.assertEqual(r3.width, width)
+        self.assertEqual(r3.height, height)
+        self.assertEqual(r3.x, x)
+        self.assertEqual(r3.y, y)
+
 
 if __name__ == '__main__':
     unittest.main()
