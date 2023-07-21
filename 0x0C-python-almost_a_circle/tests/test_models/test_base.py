@@ -18,6 +18,10 @@ class TestingBase(unittest.TestCase):
         r4 = Base(100)
         self.assertEqual(r4.id, 100)
 
+    def test_check_assigned_idd(self):
+        r4 = Base(101)
+        self.assertEqual(r4.id, 101)
+
     def test_check_id_afta_assigned_id(self):
         r5 = Base()
         self.assertEqual(r5.id, 4)
