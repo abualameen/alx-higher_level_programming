@@ -67,5 +67,11 @@ class TestingRectangle(unittest.TestCase):
     def test_rec_value_5(self):
         self.assertRaises(ValueError, Rectangle, 1, -2)
 
+    def test_rec_value_6(self):
+        self.assertRaises(ValueError, Rectangle, 0, 2)
+
+    def test_rec_value_7(self):
+        self.assertRaises(ValueError, Rectangle, 1, 0)
+
 if __name__ == '__main__':
     unittest.main()
