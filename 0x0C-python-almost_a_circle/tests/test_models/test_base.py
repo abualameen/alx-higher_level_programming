@@ -23,7 +23,7 @@ class TestingBase(unittest.TestCase):
         self.assertEqual(r5.id, 4)
 
     def test_base_tojson_string(self):
-        pass
+        self.assertRaises(TypeError, Base.to_json_string(None))
     
 
 if __name__ == '__main__':
