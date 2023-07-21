@@ -47,11 +47,11 @@ class TestingBase(unittest.TestCase):
          self.assertEqual(Base.from_json_string([]), "[]")
 
     def test_check_if_base_from_json_string2(self):
-        output = Base.from_json_string('[{ "id": 89 }]')
+        output = Base.from_json_string('[{"id": 89}]')
         self.assertIsNotNone(output)
 
     def test_check_if_base_from_json_string3(self):
-        output = Base.from_json_string('[{ "id": 89 }]')
+        output = Base.from_json_string('[{"id": 89}]')
         self.assertIsInstance(output, list)
 
 
