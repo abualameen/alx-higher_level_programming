@@ -13,6 +13,10 @@ class TestingRectangle(unittest.TestCase):
         output = Rectangle(1, 2)
         self.assertIsNotNone(output)
 
+    def test_rec_id_1(self):
+        output = Rectangle(1, 2, 3)
+        self.assertIsNotNone(output)
+
 
 if __name__ == '__main__':
     unittest.main()
