@@ -28,5 +28,9 @@ class TestingBase(unittest.TestCase):
     def test_enmpty_list_dic(self):
         self.assertEqual(Base.to_json_string([]), "[]")
 
+    def test_check_if_dumps(self):
+        self.assertEqual(Base.to_json_string({'rat': 10}), '{"rat": 10}')
+
+
 if __name__ == '__main__':
     unittest.main()
