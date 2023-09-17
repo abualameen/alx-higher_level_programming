@@ -6,7 +6,7 @@ this module connects to mysql database and retrieves data from the states table
 
 
 import sys
-import MySQLdb
+import mysql.connector
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
