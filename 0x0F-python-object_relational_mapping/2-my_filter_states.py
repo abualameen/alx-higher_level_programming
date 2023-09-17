@@ -7,7 +7,7 @@ table of hbtn_0e_0_usa where name matches the argument.
 
 
 import sys
-import MySQLdb
+import mysql.connector
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
@@ -18,9 +18,9 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    name_of_state = sys.argv[4]
+    name_of_state = sys.argv[4].split(',')
 
-    db = MySQLdb.connect(
+    db = mysql.connector.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
@@ -29,8 +29,10 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (name_of_state,))
+    query = "SELECT * FROM states WHERE name IN ({}) ORDER BY id ASC".format(
+        ', '.join(['%s'] * len(name_of_state))
+    )
+    cursor.execute(query, name_of_state)
     results = cursor.fetchall()
     if not results:
         print("No states found for '{}'".format(name_of_state))
