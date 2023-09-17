@@ -30,9 +30,11 @@ if __name__ == "__main__":
             charset="utf8"
         )
         cursor = db.cursor()
-        query = "SELECT * FROM states WHERE name IN ({}) ORDER BY id ASC".format(
-            ', '.join(['%s'] * len(name_of_state))
-        )   
+        query = """
+            SELECT * FROM states
+            WHERE name IN ({})
+            ORDER BY id ASC
+            """.format(', '.join(['%s'] * len(name_of_state)))
         cursor.execute(query, name_of_state)
         results = cursor.fetchall()
         if not results:
