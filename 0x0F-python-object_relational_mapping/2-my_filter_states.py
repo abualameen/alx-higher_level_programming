@@ -19,8 +19,6 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
     name_of_state = sys.argv[4]
-
-    
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
