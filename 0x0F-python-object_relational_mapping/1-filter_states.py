@@ -19,7 +19,7 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
 
     try:
-        db = mysql.connector.connect(
+        db = MySQLdb.connect(
             host="localhost",
             port=3306,
             user=mysql_username,
