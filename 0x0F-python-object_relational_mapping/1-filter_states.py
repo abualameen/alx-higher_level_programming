@@ -31,15 +31,7 @@ if __name__ == "__main__":
         query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
         cursor.execute(query)
         results = cursor.fetchall()
-        if not results:
-            print("No states found that start with 'N'")
-        else:
-            for row in results:
-                print(row)
-    except MySQLdb.Error as e:
-        print("MySQL Error:", e)
-    finally:
-        if cursor:
-            cursor.close()
-        if db:
-            db.close()
+        for row in results:
+            print(row)
+        cursor.close()
+        db.close()
