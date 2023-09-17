@@ -10,7 +10,8 @@ import mysql.connector
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: {} <mysql_username> <mysql_password> <database_name>".format(sys.argv[0]))
+        print("Usage: {} <mysql_username> <mysql_password> "
+              "<database_name>".format(sys.argv[0]))
         sys.exit(1)
 
     mysql_username = sys.argv[1]
@@ -33,5 +34,3 @@ if __name__ == "__main__":
         print(row)
     cursor.close()
     db.close()
-
-
