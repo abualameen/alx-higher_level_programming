@@ -32,7 +32,10 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (name_of_state,))
     results = cursor.fetchall()
-    for row in results:
-        print(row)
+    if not results:
+        print("No states found for '{}'".format(name_of_state))
+    else:
+        for row in results:
+            print(row)
     cursor.close()
     db.close()
