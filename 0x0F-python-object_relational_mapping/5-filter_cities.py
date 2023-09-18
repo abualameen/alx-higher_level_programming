@@ -38,7 +38,8 @@ if __name__ == "__main__":
     results = cursor.fetchall()
     if results:
         city_names = [r[0] for r in results]
-        print(f"{', '.join(city_names)}")
+        if city_names:
+            print(f"{', '.join(city_names)}")
     else:
         print(f"No cities found for {state_name}")
     cursor.close()
