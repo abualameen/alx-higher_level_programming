@@ -7,7 +7,7 @@ table of hbtn_0e_0_usa where name matches the argument.
 
 
 import sys
-import MySQLdb
+import mysql.connector
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
     name_of_state = sys.argv[4]
     city_names = []
-    db = MySQLdb.connect(
+    db = mysql.connector.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
@@ -36,9 +36,9 @@ if __name__ == "__main__":
             "ORDER BY cities.id ASC "
     cursor.execute(query, (name_of_state,))
     results = cursor.fetchall()
-    city_names = [r[0] for row in results]
+    city_names = [r[0] for r in results]
     if city_names:
-        print(f"{', '.join(city_names)} (State: {state_name})")
+        print(f"{', '.join(city_names)}")
     else:
         print(f"No cities found for {state_name}")
     cursor.close()
