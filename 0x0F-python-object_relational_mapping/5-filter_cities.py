@@ -36,8 +36,10 @@ if __name__ == "__main__":
             "ORDER BY cities.id ASC "
     cursor.execute(query, (name_of_state,))
     results = cursor.fetchall()
-    for row in results:
-        city_names.append(row[0])
-    print(', '.join(city_names))
+    city_names = [r[0] for row in results]
+    if city_names:
+        print(f"{', '.join(city_names)} (State: {state_name})")
+    else:
+        print(f"No cities found for {state_name}")
     cursor.close()
     db.close()
