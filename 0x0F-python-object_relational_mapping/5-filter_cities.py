@@ -36,8 +36,8 @@ if __name__ == "__main__":
             "ORDER BY cities.id ASC "
     cursor.execute(query, (name_of_state,))
     results = cursor.fetchall()
-    city_names = [r[0] for r in results]
-    if city_names:
+    if results:
+        city_names = [r[0] for r in results]
         print(f"{', '.join(city_names)}")
     else:
         print(f"No cities found for {state_name}")
