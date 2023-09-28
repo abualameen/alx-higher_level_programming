@@ -8,6 +8,7 @@ this model find the peak
 
 
 def find_peak(list_of_integers):
+    """ find the peak """
     center_idx = len(list_of_integers) // 2
     current_ele = list_of_integers[center_idx]
 
