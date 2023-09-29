@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 """
-this model find the peak
-#!/usr/bin/python3
+this model find the peak of a list
 
 """
 
