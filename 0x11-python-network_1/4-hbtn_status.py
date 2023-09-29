@@ -13,7 +13,5 @@ if __name__ == "__main__":
     texts = response.text.split()
     for tex in texts:
         print("Body response:")
-        print("\t- type", type(response.text)
+        print("\t- type", type(response.text))
         print("\t- content:", tex)
-    
-
