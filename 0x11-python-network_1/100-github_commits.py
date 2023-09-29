@@ -9,7 +9,7 @@ recent to oldest) of the repository
 import requests
 import sys
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: {} <repository_name> <owner_name>".format(sys.argv[0]))
         sys.exit(1)
