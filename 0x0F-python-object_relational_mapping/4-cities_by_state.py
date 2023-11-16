@@ -7,19 +7,18 @@ table of hbtn_0e_0_usa where name matches the argument.
 
 
 import sys
-import mysql.connector
+import MySQLdb
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 4:
         print("Usage: {} <mysql_username> <mysql_password> "
-              "<database_name> <name_of_state>".format(sys.argv[0]))
+              "<database_name>".format(sys.argv[0]))
         sys.exit(1)
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    name_of_state = sys.argv[4]
-    db = mysql.connector.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
@@ -28,8 +27,11 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (name_of_state,))
+    query = "SELECT cities.id, cities.name, states.name " \
+            "FROM cities " \
+            "JOIN states ON cities.state_id = states.id " \
+            " ORDER BY cities.id ASC"
+    cursor.execute(query)
     results = cursor.fetchall()
     for row in results:
         print(row)
