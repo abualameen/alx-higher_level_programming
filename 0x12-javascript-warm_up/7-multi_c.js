@@ -11,4 +11,3 @@ if (!isNaN(num) && num > 0) {
 } else {
 
 }
-
