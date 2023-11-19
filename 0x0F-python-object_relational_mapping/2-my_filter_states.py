@@ -5,7 +5,7 @@ table of hbtn_0e_0_usa where name matches the argument.
 
 """
 import sys
-import mysql.connector
+import MYSQLdb
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
     name_of_state = sys.argv[4]
-    db = mysql.connector.connect(
+    db = MYSQLdb.connect(
         host="localhost",
         port=3306,
         user=mysql_username,
