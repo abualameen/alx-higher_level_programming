@@ -1,25 +1,41 @@
 #!/usr/bin/python3
 """
-This module creates the class State with some attributes using SQLAlchemy
+th:s module is the module that creates the states column in the database
+
+
 """
 
 
-from sqlalchemy import Column, Integer, String
+from urllib.parse import quote_plus
+import sys
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+import sqlalchemy
 from sqlalchemy.orm import relationship
-from relationship_city import Base
+
+Base = sqlalchemy.orm.declarative_base()
 
 
 class State(Base):
     """
-    THIS IS CLASS STATE
+    this class is a class that represent the States column in the data base
+
     """
     __tablename__ = 'states'
     id = Column(
-        Integer,
-        primary_key=True,
-        autoincrement=True,
-        nullable=False,
-        unique=True
+        Integer, primary_key=True, autoincrement=True,
+        nullable=False, unique=True
     )
     name = Column(String(128), nullable=False)
-    cities = relationship("City", back_populates="state")
+    cities = relationship(
+            "City", back_populates="state",
+            cascade="all, delete-orphan"
+    )
+
+
+if __name__ == "__main__":
+    encoded_password = quote_plus(sys.argv[2])
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        sys.argv[1], encoded_password, sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
