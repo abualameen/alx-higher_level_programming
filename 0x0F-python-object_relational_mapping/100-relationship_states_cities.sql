@@ -16,3 +16,6 @@ CREATE TABLE IF NOT EXISTS cities (
     FOREIGN KEY (state_id) REFERENCES states(id)
 );
 
+
+SELECT * FROM states;
+SELECT * FROM cities;
