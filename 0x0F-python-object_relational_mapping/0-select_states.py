@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-this module connects to mysql database and retrieves data from the state date BHASE
+this module connects to mysql database and
+retrieves data from the state date BHASE
 
 """
 
