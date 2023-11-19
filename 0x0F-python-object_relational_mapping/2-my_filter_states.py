@@ -26,7 +26,6 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = db.cursor()
-    results = cursor.fetchall()
     query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
         name_of_state)
     cursor.execute(query)
