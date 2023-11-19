@@ -9,5 +9,6 @@ if (!isNaN(num) && num > 0) {
 } else if (isNaN(num)) {
   console.log('Missing number of occurrences');
 } else {
-
+  // eslint-disable-next-line no-empty
+  // Do nothing for negative numbers
 }
