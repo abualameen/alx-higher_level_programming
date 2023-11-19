@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This script creates the State “California” with the City “San Francisco” from the database hbtn_0e_100_usa.
+This script creates the State “California” with the City
+“San Francisco” from the database hbtn_0e_100_usa.
 """
+
 
 from urllib.parse import quote_plus
 import sys
