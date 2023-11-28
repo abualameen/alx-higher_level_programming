@@ -8,8 +8,22 @@ if (!sourceFile1 || !sourceFile2 || !destinationFile) {
   process.exit(1);
 }
 
-const content1 = fs.readFileSync(sourceFile1, 'utf-8').trim();
-const content2 = fs.readFileSync(sourceFile2, 'utf-8').trim();
+let content1 = '';
+let content2 = '';
+
+try {
+  content1 = fs.readFileSync(sourceFile1, 'utf-8').trim(); // Trim to remove extra whitespace
+} catch (error) {
+  console.error(`Error reading ${sourceFile1}: ${error.message}`);
+  process.exit(1);
+}
+
+try {
+  content2 = fs.readFileSync(sourceFile2, 'utf-8').trim(); // Trim to remove extra whitespace
+} catch (error) {
+  console.error(`Error reading ${sourceFile2}: ${error.message}`);
+  process.exit(1);
+}
 
 let concatenatedContent;
 
