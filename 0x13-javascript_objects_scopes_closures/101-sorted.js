@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const dict = require('./101-data').dict;
 
 const invertedDict = {};
@@ -15,4 +14,3 @@ for (const userId in dict) {
 }
 
 console.log(invertedDict);
-

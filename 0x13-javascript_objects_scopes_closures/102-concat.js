@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const fs = require('fs');
 
 const [, , sourceFile1, sourceFile2, destinationFile] = process.argv;
@@ -17,4 +16,3 @@ const concatenatedContent = `${content1}${content2}`;
 fs.writeFileSync(destinationFile, concatenatedContent);
 
 console.log(`The content of ${sourceFile1} and ${sourceFile2} has been concatenated to ${destinationFile}.`);
-
