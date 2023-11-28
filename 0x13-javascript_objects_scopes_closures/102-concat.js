@@ -14,5 +14,3 @@ const content2 = fs.readFileSync(sourceFile2, 'utf-8').trim(); // Trim to remove
 const concatenatedContent = `${content1}\n${content2}\n`;
 
 fs.writeFileSync(destinationFile, concatenatedContent);
-
-console.log(`The content of ${sourceFile1} and ${sourceFile2} has been concatenated to ${destinationFile}.`);
