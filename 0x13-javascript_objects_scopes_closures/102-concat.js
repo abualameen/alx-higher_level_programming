@@ -13,7 +13,9 @@ const content2 = fs.readFileSync(sourceFile2, 'utf-8').trim();
 
 let concatenatedContent;
 
-if (content1.length === 0) {
+if (content1.length === 0 && content2.length === 0) {
+  concatenatedContent = '';
+} else if (content1.length === 0) {
   concatenatedContent = content2;
 } else if (content2.length === 0) {
   concatenatedContent = content1;
