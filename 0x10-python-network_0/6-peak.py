@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+this module finds the peak number in a list
+
+"""
+
+
 def find_peak(list_of_integers):
     """
     Find a peak in a list of unsorted integers.
