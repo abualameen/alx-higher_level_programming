@@ -13,4 +13,4 @@ if __name__ == "__main__":
     response = requests.get(url)
     if 'X-Request-Id' in response.headers:
         x_req_id = response.headers['X-Request-Id']
-     print(x_req_id)
+    print(x_req_id)
