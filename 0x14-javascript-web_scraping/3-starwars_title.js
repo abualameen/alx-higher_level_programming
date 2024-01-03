@@ -28,15 +28,9 @@ function getMovieTitle (movieId) {
     }
   });
 }
-
-// Check if the movie ID is provided as an argument.
 if (process.argv.length !== 3) {
   console.error('Usage: ./3-starwars_title.js <movieId>');
-  process.exit(1); // Exit with error code 1.
+  process.exit(1);
 }
-
-// Get the movie ID from the command line argument.
 const movieId = process.argv[2];
-
-// Call the function to fetch and print the title of the Star Wars movie.
 getMovieTitle(movieId);
