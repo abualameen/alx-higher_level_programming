@@ -1,29 +1,31 @@
 #!/usr/bin/node
 
-const https = require('https');
+const request = require('request');
 
 /**
  * Function to display the status code of a GET request to a URL.
  * @param {string} url - The URL to request (GET).
  */
 function getStatusCode(url) {
-  const options = {
-    followRedirect: true, // Enable following redirects
-  };
-
-  https.get(url, options, (response) => {
-    if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
-      getStatusCode(response.headers.location);
-    } else {
-      console.log(`code: ${response.statusCode}`);
+  request(url, (error, response) => {
+    if (error) {
+      // If an error occurred during the request, print the error.
+      console.error(error);
+      return;
     }
-  }).on('error', (error) => {
-    console.error(error);
+    // Print the status code of the response.
+    console.log(`code: ${response.statusCode}`);
   });
 }
+
+// Check if the URL is provided as an argument.
 if (process.argv.length !== 3) {
   console.error('Usage: ./2-statuscode.js <URL>');
-  process.exit(1);
+  process.exit(1); // Exit with error code 1.
 }
-const url = process.argv[2];.
+
+// Get the URL from the command line argument.
+const url = process.argv[2];
+
+// Call the function to display the status code of the GET request.
 getStatusCode(url);
