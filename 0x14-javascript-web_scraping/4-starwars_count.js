@@ -20,7 +20,6 @@ function countMoviesWithWedgeAntilles (apiUrl) {
 
     try {
       const films = JSON.parse(body).results;
-      // Filter films where the character "Wedge Antilles" (ID 18) is present
       const count = films.filter(film => film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')).length;
       console.log(count);
     } catch (parseError) {
@@ -28,15 +27,9 @@ function countMoviesWithWedgeAntilles (apiUrl) {
     }
   });
 }
-
-// Check if the API URL is provided as an argument.
 if (process.argv.length !== 3) {
   console.error('Usage: ./4-starwars_count.js <apiUrl>');
   process.exit(1);
 }
-
-// Get the API URL from the command line argument.
 const apiUrl = process.argv[2];
-
-// Call the function to count movies with "Wedge Antilles".
 countMoviesWithWedgeAntilles(apiUrl);
