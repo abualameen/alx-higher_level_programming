@@ -23,11 +23,18 @@ function getStarWarsCharacters (movieId) {
     try {
       const movieData = JSON.parse(body);
       const charactersUrls = movieData.characters;
-      charactersUrls.forEach((characterUrl) => {
+
+      // Fetch and print the character names from the characters' URLs in order.
+      charactersUrls.forEach((characterUrl, index) => {
         request(characterUrl, (charError, charResponse, charBody) => {
           if (!charError && charResponse.statusCode === 200) {
             const characterData = JSON.parse(charBody);
             console.log(characterData.name);
+
+            // Check if all characters have been printed, then exit the process.
+            if (index === charactersUrls.length - 1) {
+              process.exit(0);
+            }
           } else {
             console.error('Error fetching character:', charError);
           }
@@ -38,9 +45,15 @@ function getStarWarsCharacters (movieId) {
     }
   });
 }
+
+// Check if the Movie ID is provided as an argument.
 if (process.argv.length !== 3) {
-  console.error('Usage: ./100-starwars_characters.js <movieId>');
+  console.error('Usage: ./101-starwars_characters.js <movieId>');
   process.exit(1);
 }
+
+// Get the Movie ID from the command line argument.
 const movieId = process.argv[2];
+
+// Call the function to fetch and print all characters of the Star Wars movie.
 getStarWarsCharacters(movieId);
