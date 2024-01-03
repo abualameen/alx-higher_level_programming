@@ -23,15 +23,11 @@ function getStarWarsCharacters (movieId) {
     try {
       const movieData = JSON.parse(body);
       const charactersUrls = movieData.characters;
-
-      // Fetch and print the character names from the characters' URLs in order.
       charactersUrls.forEach((characterUrl, index) => {
         request(characterUrl, (charError, charResponse, charBody) => {
           if (!charError && charResponse.statusCode === 200) {
             const characterData = JSON.parse(charBody);
             console.log(characterData.name);
-
-            // Check if all characters have been printed, then exit the process.
             if (index === charactersUrls.length - 1) {
               process.exit(0);
             }
