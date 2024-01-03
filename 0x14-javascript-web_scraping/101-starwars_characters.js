@@ -6,7 +6,7 @@ const request = require('request');
  * Function to fetch and print all characters of a Star Wars movie by Movie ID.
  * @param {string} movieId - The ID of the Star Wars movie.
  */
-function getStarWarsCharacters(movieId) {
+function getStarWarsCharacters (movieId) {
   const apiUrl = `https://swapi.dev/api/films/${movieId}/`;
 
   request(apiUrl, (error, response, body) => {
