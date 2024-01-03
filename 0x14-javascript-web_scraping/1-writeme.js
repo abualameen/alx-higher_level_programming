@@ -13,7 +13,6 @@ function writeToFile (filePath, content) {
       console.error(err);
       return;
     }
-    console.log('The file has been saved!');
   });
 }
 
