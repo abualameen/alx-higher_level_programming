@@ -8,7 +8,7 @@ const fs = require('fs');
  * @param {string} url - The URL to request.
  * @param {string} filePath - The file path to store the body response.
  */
-function requestAndStore(url, filePath) {
+function requestAndStore (url, filePath) {
   request(url, (error, response, body) => {
     if (error) {
       console.error('Error:', error);
@@ -24,8 +24,6 @@ function requestAndStore(url, filePath) {
     fs.writeFile(filePath, body, 'utf-8', (writeError) => {
       if (writeError) {
         console.error('Error writing to file:', writeError);
-      } else {
-        console.log(`Response body successfully saved to ${filePath}`);
       }
     });
   });
