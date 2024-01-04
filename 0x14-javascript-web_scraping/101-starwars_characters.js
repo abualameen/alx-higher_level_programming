@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-function getStarWarsCharacters(movieId) {
+function getStarWarsCharacters (movieId) {
   const apiUrl = `https://swapi.dev/api/films/${movieId}/`;
 
   request(apiUrl, (error, response, body) => {
@@ -38,7 +38,6 @@ function getStarWarsCharacters(movieId) {
           });
         })
         .catch(err => console.error('Error fetching characters:', err));
-
     } catch (parseError) {
       console.error('Error parsing JSON:', parseError);
     }
