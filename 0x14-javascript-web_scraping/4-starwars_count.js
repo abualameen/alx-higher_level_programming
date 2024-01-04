@@ -6,7 +6,7 @@ const request = require('request');
  * Function to count the number of movies where the character "Wedge Antilles" (ID 18) is present.
  * @param {string} apiUrl - The API URL of the Star Wars films.
  */
-function countMoviesWithWedgeAntilles(apiUrl) {
+function countMoviesWithWedgeAntilles (apiUrl) {
   request(apiUrl, (error, response, body) => {
     if (error) {
       console.error('Error:', error);
