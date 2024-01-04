@@ -51,10 +51,4 @@ if (process.argv.length !== 3) {
 }
 
 const movieId = process.argv[2];
-
-// Special handling for movie ID 1 (A New Hope) based on checker feedback
-if (movieId === '1') {
-  console.log('OK'); // For this checker, the expected output is "OK"
-} else {
-  getStarWarsCharacters(movieId);
-}
+getStarWarsCharacters(movieId);
